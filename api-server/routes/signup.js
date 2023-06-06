@@ -2,7 +2,6 @@ const express = require("express");
 const User = require("../modals/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { createResponse } = require("../utils");
 const router = express.Router();
 
 router.post("/new-user", async (req, res) => {

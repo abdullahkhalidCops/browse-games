@@ -2,7 +2,6 @@ const express = require("express");
 const User = require("../modals/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { createResponse } = require("../utils");
 
 const router = express.Router();
 
@@ -29,13 +28,12 @@ router.post("/", async (req, res) => {
       });
       user.token = token;
 
-      res.status(200).send(
-        createResponse({
+      res.status(200).send({
           success: true,
           status: 200,
           message: "User logged in",
           user,
-        })
+        }
       );
     }
   } catch (err) {
